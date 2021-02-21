@@ -7,6 +7,8 @@ ENV TZ=America/Los_Angeles
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN TERM=vt100 apt-get install -y tzdata
 RUN TERM=vt100 apt-get install -y texlive texlive-latex-extra make ghostscript
+# Add Japanese language support
+RUN TERM=vt100 apt-get install -y texlive-xetex texlive-lang-japanese
 RUN TERM=vt100 apt-get install -y git
 RUN mkdir -p /local
 
